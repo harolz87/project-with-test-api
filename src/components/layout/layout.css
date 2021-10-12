@@ -3,7 +3,7 @@
     width: 100%;
     display: grid;
     height: 100vh;
-    grid-template-rows: 64px auto 35px;
+    grid-template-rows: 64px auto 56px;
 }
 
 .layout__body {
