@@ -1,0 +1,22 @@
+{
+    "presets": [
+      "@babel/env",
+      "@babel/react",
+      "@babel/typescript"
+    ],
+    "env": {
+      "test": {},
+      "prod": {},
+      "dev": {
+        "plugins": [
+          "react-refresh/babel"
+        ]
+      }
+    },
+    "plugins": [
+      "@babel/plugin-transform-runtime",
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-proposal-class-properties"
+    ]
+}
+  
