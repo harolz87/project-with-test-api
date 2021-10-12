@@ -1,0 +1,11 @@
+.layout {
+    margin: auto;
+    width: 100%;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 35px auto 35px;
+}
+
+.layout__body {
+    height: auto;
+}
