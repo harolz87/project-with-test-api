@@ -21,6 +21,14 @@ const getDevConfig = (): any => ({
       directory: path.join(__dirname, '../../'),
     },
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 });
 
 export default (): webpack.Configuration => (
