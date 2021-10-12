@@ -20,7 +20,7 @@ interface BodyProps {
 export const Body = ({
   children,
 }: BodyProps) : JSX.Element => (
-  <div className="layout__body">
+  <main className="layout__body">
     {children}
-  </div>
+  </main>
 );
