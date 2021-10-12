@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import { Routes } from './routes';
 import './global.css';
 
 export const App = (): JSX.Element => (
-  <div>
-    ok
-  </div>
+  <Suspense fallback={<div />}>
+    <Routes />
+  </Suspense>
 );
