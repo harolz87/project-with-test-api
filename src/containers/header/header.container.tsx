@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import AppBar from '@mui/material//AppBar';
-import Toolbar from '@mui/material//Toolbar';
-import Button from '@mui/material//Button';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Button from '@mui/material/Button';
 import { RootState } from '../../store';
 import './header.css';
 
