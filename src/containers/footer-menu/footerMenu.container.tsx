@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import BottomNavigation from '@material-ui/core/BottomNavigation';
-import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import HomeIcon from '@material-ui/icons/Home';
-import AccountCircle from '@material-ui/icons/AccountCircle';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import HomeIcon from '@mui/icons-material/Home';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const INIT_VALUE = '/';
 
