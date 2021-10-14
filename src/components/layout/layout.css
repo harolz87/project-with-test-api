@@ -1,12 +1,15 @@
 .layout {
     margin: auto;
     width: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    grid-template-rows: 64px auto 56px;
 }
 
 .layout__body {
-    height: auto;
     padding: 10px;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
