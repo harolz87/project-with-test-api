@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { RootState } from '../../store';
-import { usHomeActions } from '../../hooks/actions/usHomeActions';
 import { Masonry } from '../../components/masonry';
 import { ItemPokemon } from '../../components/item-pokemon';
 
+import { useHomeActions } from '../../hooks/actions/useHomeActions';
+import { useFavsActions } from '../../hooks/actions/useFavsActions';
+
 export const Home = (): JSX.Element => {
   const regs = useSelector((state: RootState) => state.home.regs);
-  const homeActions = usHomeActions();
+  const favs = useSelector((state: RootState) => state.favs.regs);
+  const homeActions = useHomeActions();
+  const favsActions = useFavsActions();
+
   useEffect(() => {
     if (regs.length === 0) {
       homeActions.nextRegs();
@@ -22,16 +27,45 @@ export const Home = (): JSX.Element => {
     }
   };
 
+  const favsHash = useMemo(() => {
+    const hash = favs.reduce((acc: any, fav) => {
+      acc[fav.id] = true;
+      return acc;
+    }, {});
+
+    return hash;
+  }, [favs]);
+
+  const addFav = (args: any) => (): void => {
+    favsActions.addFav(args);
+  };
+
+  const removeFav = (id: number) => (): void => {
+    favsActions.removeFav(id);
+  };
+
   return (
     <Masonry onScroll={onScroll}>
       {
-        regs.map((reg, index) => (
-          <ItemPokemon
-            key={reg.name}
-            id={index + 1}
-            name={reg.name}
-          />
-        ))
+        regs.map(({ name }, index) => {
+          const id = index + 1;
+          const isLiked = favsHash[id] === true;
+          let onClickLiked;
+          if (!isLiked) {
+            onClickLiked = addFav({ name, id });
+          } else {
+            onClickLiked = removeFav(id);
+          }
+          return (
+            <ItemPokemon
+              key={name}
+              id={id}
+              name={name}
+              isLiked={isLiked}
+              onClickLiked={onClickLiked}
+            />
+          );
+        })
       }
     </Masonry>
   );

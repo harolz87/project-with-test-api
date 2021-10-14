@@ -11,17 +11,21 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 interface ItemPokemonProps {
   id: number;
   name: string;
+  isLiked: boolean;
+  onClickLiked: () => void;
 }
 
 export const ItemPokemon = ({
   id,
   name,
+  isLiked,
+  onClickLiked,
 }: ItemPokemonProps): JSX.Element => (
   <div>
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         avatar={(
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+          <Avatar sx={{ bgcolor: red[500] }}>
             {id}
           </Avatar>
         )}
@@ -34,8 +38,11 @@ export const ItemPokemon = ({
         alt={name}
       />
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton
+          aria-label="add to favorites"
+          onClick={onClickLiked}
+        >
+          <FavoriteIcon sx={{ color: isLiked ? red[500] : undefined }} />
         </IconButton>
       </CardActions>
     </Card>

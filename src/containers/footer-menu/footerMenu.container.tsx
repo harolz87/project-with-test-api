@@ -3,7 +3,8 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import HomeIcon from '@mui/icons-material/Home';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const INIT_VALUE = '/';
 
@@ -20,9 +21,15 @@ const menuTabs = [
   },
   {
     id: 2,
-    label: 'dummy',
+    label: 'Favorite',
+    value: '/favs',
+    icon: <FavoriteIcon />,
+  },
+  {
+    id: 3,
+    label: 'Dummy',
     value: '/dummy',
-    icon: <AccountCircle />,
+    icon: <AccountCircleIcon />,
   },
 ];
 

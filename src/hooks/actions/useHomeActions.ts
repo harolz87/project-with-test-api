@@ -1,4 +1,4 @@
 import { useActions } from './useActions';
 import { actions } from '../../store/slices/home';
 
-export const usHomeActions = (): typeof actions => useActions(actions);
+export const useHomeActions = (): typeof actions => useActions(actions);
