@@ -7,9 +7,7 @@ import { actions as loadActions } from '../store/slices/load';
 const handleValidator = async (response: any): Promise<any> => {
   if (!response.ok) {
     const { status, statusText } = response;
-    const json = await response.json();
-    const message = json.error ? json.error : statusText;
-    const error = new Error(message);
+    const error = new Error(`${status} ${statusText}`);
     error.statusCode = status;
     throw error;
   }

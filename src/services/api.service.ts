@@ -25,6 +25,22 @@ const list = ({
   })
 );
 
+interface GetItemArgs {
+  id: string;
+}
+
+const getItem = ({
+  id,
+}: GetItemArgs): Promise<Response> => (
+  Fetch({
+    url: `https://pokeapi.co/api/v2/pokemon/${id}`,
+    init: {
+      method: 'GET',
+    },
+  })
+);
+
 export const api = {
   list,
+  getItem,
 };

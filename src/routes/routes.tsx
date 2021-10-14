@@ -1,5 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+} from 'react-router-dom';
 
 import { PrivateRoute } from './privateRoute';
 
@@ -10,6 +14,7 @@ const Home = React.lazy(() => import('../pages/home'));
 const Dummy = React.lazy(() => import('../pages/dummy'));
 const NoFound = React.lazy(() => import('../pages/no-found'));
 const Favs = React.lazy(() => import('../pages/favs'));
+const Detail = React.lazy(() => import('../pages/detail'));
 
 export const Routes = (): JSX.Element => (
   <BrowserRouter>
@@ -24,6 +29,12 @@ export const Routes = (): JSX.Element => (
           exact
           path="/"
           component={Home}
+          routeRedirect="/login"
+        />
+        <PrivateRoute
+          exact
+          path="/detail/:id"
+          component={Detail}
           routeRedirect="/login"
         />
         <PrivateRoute
