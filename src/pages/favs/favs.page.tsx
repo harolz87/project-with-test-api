@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { RootState } from '../../store';
 import { Masonry } from '../../components/masonry';
-import { ItemPokemon } from '../../components/item-pokemon';
+import { PokemonItem } from '../../components/pokemon-item';
 
 import { useFavsActions } from '../../hooks/actions/useFavsActions';
 
@@ -19,7 +19,7 @@ export const Favs = (): JSX.Element => {
     <Masonry>
       {
         regs.map(({ name, id }) => (
-          <ItemPokemon
+          <PokemonItem
             key={name}
             id={id}
             name={name}

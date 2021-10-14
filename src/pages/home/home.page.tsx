@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { RootState } from '../../store';
 import { Masonry } from '../../components/masonry';
-import { ItemPokemon } from '../../components/item-pokemon';
+import { PokemonItem } from '../../components/pokemon-item';
 
+import { RootState } from '../../store';
 import { useHomeActions } from '../../hooks/actions/useHomeActions';
 import { useFavsActions } from '../../hooks/actions/useFavsActions';
 
@@ -57,7 +57,7 @@ export const Home = (): JSX.Element => {
             onClickLiked = removeFav(id);
           }
           return (
-            <ItemPokemon
+            <PokemonItem
               key={name}
               id={id}
               name={name}
