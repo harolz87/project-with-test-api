@@ -1,20 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
-import { RootState } from '../../store';
 import { Masonry } from '../../components/masonry';
 import { PokemonItem } from '../../components/pokemon-item';
 
-import { useFavsActions } from '../../hooks/actions/useFavsActions';
+import { useFavs } from './hooks/useFavs';
 
 export const Favs = (): JSX.Element => {
-  const regs = useSelector((state: RootState) => state.favs.regs);
-  const favsActions = useFavsActions();
-
-  const removeFav = (id: number) => (): void => {
-    favsActions.removeFav(id);
-  };
-
+  const { regs, removeFav } = useFavs();
   return (
     <>
       <h2>My favorite Pokemons</h2>
