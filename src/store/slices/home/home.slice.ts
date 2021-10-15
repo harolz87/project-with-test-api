@@ -7,6 +7,7 @@ export type sliceState = {
   offset: number;
   limit: number;
   block: boolean;
+  filter: string;
 }
 
 const initialState: sliceState = {
@@ -14,6 +15,7 @@ const initialState: sliceState = {
   offset: 0,
   limit: 20,
   block: false,
+  filter: '',
 };
 
 const slice = createSlice({
@@ -21,9 +23,16 @@ const slice = createSlice({
   initialState,
   reducers: {
     setRegs: (state: sliceState, action: PayloadAction<any[]>): void => {
-      state.regs = [...state.regs, ...action.payload];
+      const newRegs = action.payload.map((item, index) => ({
+        ...item,
+        id: state.regs.length + index + 1,
+      }));
+      state.regs = [...state.regs, ...newRegs];
       state.offset += state.limit;
       state.block = action.payload.length < state.limit;
+    },
+    setFilter: (state: sliceState, action: PayloadAction<string>): void => {
+      state.filter = action.payload;
     },
     reset: () => initialState,
   },
