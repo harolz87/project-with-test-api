@@ -9,6 +9,8 @@ import { PrivateRoute } from './privateRoute';
 
 import { Layout } from '../containers/layout';
 
+import { ROOT_ROUTE } from '../config/env';
+
 const Login = React.lazy(() => import('../pages/login'));
 const Home = React.lazy(() => import('../pages/home'));
 const Dummy = React.lazy(() => import('../pages/dummy'));
@@ -22,32 +24,32 @@ export const Routes = (): JSX.Element => (
       <Switch>
         <Route
           exact
-          path="/project-with-test-api/login"
+          path={`${ROOT_ROUTE}/login`}
           component={Login}
         />
         <PrivateRoute
           exact
-          path="/project-with-test-api/"
+          path={ROOT_ROUTE}
           component={Home}
-          routeRedirect="/project-with-test-api/login"
+          routeRedirect={`${ROOT_ROUTE}/login`}
         />
         <PrivateRoute
           exact
-          path="/project-with-test-api/detail/:id"
+          path={`${ROOT_ROUTE}/detail/:id`}
           component={Detail}
-          routeRedirect="/login"
+          routeRedirect={`${ROOT_ROUTE}/login`}
         />
         <PrivateRoute
           exact
-          path="/favs"
+          path={`${ROOT_ROUTE}/favs`}
           component={Favs}
-          routeRedirect="/project-with-test-api/login"
+          routeRedirect={`${ROOT_ROUTE}/login`}
         />
         <PrivateRoute
           exact
-          path="/project-with-test-api/dummy"
+          path={`${ROOT_ROUTE}/dummy`}
           component={Dummy}
-          routeRedirect="/project-with-test-api/login"
+          routeRedirect={`${ROOT_ROUTE}/login`}
         />
         <Route component={NoFound} />
       </Switch>

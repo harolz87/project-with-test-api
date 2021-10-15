@@ -9,6 +9,8 @@ import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
 
+import { ROOT_ROUTE } from '../../config/env';
+
 import './pokemonItem.css';
 
 interface PokemonItemProps {
@@ -27,7 +29,7 @@ const LinkDetail = ({
   id,
   children,
 }: LinkDetailProps): JSX.Element => (
-  <Link to={`/detail/${id}`}>
+  <Link to={`${ROOT_ROUTE}/detail/${id}`}>
     {children}
   </Link>
 );

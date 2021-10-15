@@ -6,7 +6,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-const INIT_VALUE = '/';
+import { ROOT_ROUTE } from '../../config/env';
 
 interface FooterMenuProps extends RouteComponentProps {
     className?: string;
@@ -16,19 +16,19 @@ const menuTabs = [
   {
     id: 1,
     label: 'Home',
-    value: '/',
+    value: ROOT_ROUTE,
     icon: <HomeIcon />,
   },
   {
     id: 2,
     label: 'Favorite',
-    value: '/favs',
+    value: `${ROOT_ROUTE}/favs`,
     icon: <FavoriteIcon />,
   },
   {
     id: 3,
     label: 'Dummy',
-    value: '/dummy',
+    value: `${ROOT_ROUTE}/dummy`,
     icon: <AccountCircleIcon />,
   },
 ];
@@ -38,7 +38,7 @@ export const FooterMenu = withRouter(({
   history,
   location,
 }: FooterMenuProps): JSX.Element => {
-  const [value, setValue] = useState(INIT_VALUE);
+  const [value, setValue] = useState(ROOT_ROUTE);
   useEffect((): void => {
     setValue(location.pathname);
   // eslint-disable-next-line react-hooks/exhaustive-deps

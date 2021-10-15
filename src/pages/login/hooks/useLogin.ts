@@ -6,6 +6,7 @@ import { RootState } from '../../../store';
 
 import { useAlertErrorActions } from '../../../hooks/actions/useAlertErrorActions';
 import { useAuthActions } from '../../../hooks/actions/useAuthActions';
+import { ROOT_ROUTE } from '../../../config/env';
 
 interface UseLoginResult {
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void ;
@@ -19,7 +20,7 @@ export const useLogin = (): UseLoginResult => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      history.push('/');
+      history.push(ROOT_ROUTE);
     }
   }, [isAuthenticated]);
 
