@@ -1,0 +1,7 @@
+.footer button.Mui-selected {
+    color: var(--colorPrimary);
+}
+
+.footer .MuiBottomNavigation-root {
+    background-color: var(--colorSecond);
+}

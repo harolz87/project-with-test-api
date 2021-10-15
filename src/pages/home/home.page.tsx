@@ -45,8 +45,10 @@ export const Home = (): JSX.Element => {
   };
 
   return (
-    <Masonry onScroll={onScroll}>
-      {
+    <>
+      <h2>All Pokemons</h2>
+      <Masonry onScroll={onScroll}>
+        {
         regs.map(({ name }, index) => {
           const id = index + 1;
           const isLiked = favsHash[id] === true;
@@ -67,6 +69,7 @@ export const Home = (): JSX.Element => {
           );
         })
       }
-    </Masonry>
+      </Masonry>
+    </>
   );
 };

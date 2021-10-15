@@ -65,7 +65,7 @@ export const Login = (): JSX.Element => {
           alignItems: 'center',
         }}
       >
-        <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+        <Avatar sx={{ m: 1}} className="background-color-primary">
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">

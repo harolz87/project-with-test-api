@@ -1,7 +1,8 @@
 .pokemon-detail {
     display: flex;
-    justify-content:  center;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 40px;
     height: 100%;
 }
 
@@ -12,6 +13,8 @@
 
 .pokemon-detail__description-title {
     margin-right: 5px;
+    color: var(--colorSecond);
+    border-bottom: var(--colorSecond) 1px solid;
 }
 
 .pokemon-detail__description-content {
@@ -30,19 +33,14 @@
 .pokemon-detail__card {
     display: flex;
     height: 100%;
+    background-color: #f4f0ec;
 }
 
-.pokemon-detail__card-left {
+.pokemon-detail__card-left, .pokemon-detail__card-rigth  {
     display: flex;
     flex-direction: column;
     overflow: auto;
     flex: 1;
-}
-
-.pokemon-detail__card-rigth {
-    
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-    flex: 1;
+    justify-content: center;
+    align-self: center;
 }

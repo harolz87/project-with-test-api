@@ -1,5 +1,6 @@
-.header {
+header.header {
  height: 60px;
+ background-color: var(--colorPrimary);
 }
 
 .header__menu {

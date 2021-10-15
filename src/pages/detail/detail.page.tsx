@@ -24,6 +24,9 @@ export const Detail = (): JSX.Element | null => {
   }
 
   return (
-    <PokemonDetail reg={reg} />
+    <>
+      <h2>Pokemon detail</h2>
+      <PokemonDetail reg={reg} />
+    </>
   );
 };

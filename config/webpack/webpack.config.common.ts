@@ -15,6 +15,17 @@ export const getCommonConfig = (): webpack.Configuration => ({
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.(woff|eot|ttf)$/,
+        use: {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            fallback: 'file-loader',
+            name: 'fonts/[name].[hash].[ext]',
+          },
+        },
+      },
     ],
   },
   resolve: {

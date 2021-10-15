@@ -1,8 +1,39 @@
+:root {
+    --colorPrimary: #0075BE;
+    --colorSecond: #D5A100;
+    --colorBlue: #0075BE;
+    --colorYellow: #FFCC00;
+    --colorRed: #FB1B1B;
+    --colorGrey: #DFDFDF;
+    --colorWhite: #FFFFFF;
+    --colorBlack: #000000;
+}
+
 body {
     margin: 0;
-    background-color: #EAEEF3;
+    background-color: var(--colorGrey);
 }
 
 ul {
     margin: 0;
+}
+
+button.MuiButton-contained {
+    background-color: var(--colorPrimary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--colorSecond);
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 76px;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+div.background-color-primary {
+    background-color: var(--colorPrimary);
 }

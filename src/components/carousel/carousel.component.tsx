@@ -9,7 +9,7 @@ interface CarouselProps {
 export const Carousel = ({
   children,
 }: CarouselProps): JSX.Element => (
-  <ReCarousel autoPlay>
+  <ReCarousel>
     {children}
   </ReCarousel>
 );

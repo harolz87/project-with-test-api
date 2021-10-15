@@ -44,7 +44,7 @@ export const PokemonItem = ({
       <LinkDetail id={id}>
         <CardHeader
           avatar={(
-            <Avatar sx={{ bgcolor: red[500] }}>
+            <Avatar className="pokemon-item__avatar">
               {id}
             </Avatar>
         )}
@@ -53,7 +53,7 @@ export const PokemonItem = ({
         <CardMedia
           component="img"
           sx={{ width: '100%' }}
-          image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+          image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
           alt={name}
         />
       </LinkDetail>
@@ -63,7 +63,9 @@ export const PokemonItem = ({
           aria-label="add to favorites"
           onClick={onClickLiked}
         >
-          <FavoriteIcon sx={{ color: isLiked ? red[500] : undefined }} />
+          <FavoriteIcon
+            className={`pokemon-item__liked pokemon-item__liked--color-${isLiked ? 'checked' : 'no-checked'}`}
+          />
         </IconButton>
 
         <LinkDetail id={id}>

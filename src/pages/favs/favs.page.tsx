@@ -16,8 +16,10 @@ export const Favs = (): JSX.Element => {
   };
 
   return (
-    <Masonry>
-      {
+    <>
+      <h2>My favorite Pokemons</h2>
+      <Masonry>
+        {
         regs.map(({ name, id }) => (
           <PokemonItem
             key={name}
@@ -28,6 +30,7 @@ export const Favs = (): JSX.Element => {
           />
         ))
       }
-    </Masonry>
+      </Masonry>
+    </>
   );
 };
