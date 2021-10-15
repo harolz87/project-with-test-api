@@ -22,18 +22,18 @@ export const Routes = (): JSX.Element => (
       <Switch>
         <Route
           exact
-          path="/login"
+          path="/project-with-test-api/login"
           component={Login}
         />
         <PrivateRoute
           exact
-          path="/"
+          path="/project-with-test-api/"
           component={Home}
-          routeRedirect="/login"
+          routeRedirect="/project-with-test-api/login"
         />
         <PrivateRoute
           exact
-          path="/detail/:id"
+          path="/project-with-test-api/detail/:id"
           component={Detail}
           routeRedirect="/login"
         />
@@ -41,13 +41,13 @@ export const Routes = (): JSX.Element => (
           exact
           path="/favs"
           component={Favs}
-          routeRedirect="/login"
+          routeRedirect="/project-with-test-api/login"
         />
         <PrivateRoute
           exact
-          path="/dummy"
+          path="/project-with-test-api/dummy"
           component={Dummy}
-          routeRedirect="/login"
+          routeRedirect="/project-with-test-api/login"
         />
         <Route component={NoFound} />
       </Switch>
