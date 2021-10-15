@@ -5,7 +5,6 @@ import merge from 'webpack-merge';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { getCommonConfig } from './webpack.config.common';
 
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -49,11 +48,6 @@ const getProdConfig = (): webpack.Configuration => ({
       template: path.resolve(__dirname, './index.ejs'),
       title: 'test',
       inject: false,
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: '404.html', to: '404.html' },
-      ],
     }),
   ],
 });
