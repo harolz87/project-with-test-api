@@ -27,7 +27,7 @@ export const List = (): JSX.Element => {
         {
         regs.map(({ name, id }) => {
           const isLiked = favsHash[id] === true;
-          const onClickLiked = isLiked ? addFav({ name, id }) : removeFav(id);
+          const onClickLiked = isLiked ? removeFav(id) : addFav({ name, id });
           return (
             <PokemonItem
               key={name}
