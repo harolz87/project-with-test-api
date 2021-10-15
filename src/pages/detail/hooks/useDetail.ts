@@ -5,11 +5,11 @@ import { useParams } from 'react-router';
 import { RootState } from '../../../store';
 import { useDetailActions } from '../../../hooks/actions/useDetailActions';
 
-interface UseFavsResult {
+interface useDetailResult {
     reg: any | null;
 }
 
-export const useDetail = (): UseFavsResult => {
+export const useDetail = (): useDetailResult => {
   const reg = useSelector((state: RootState) => state.detail.reg);
   const detailActions = useDetailActions();
   const { id } = useParams<{ id: string }>();
