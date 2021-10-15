@@ -1,19 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import TextField from '@mui/material/TextField';
-import { useHomeActions } from '../../../../hooks/actions/useHomeActions';
+import { useFilter } from '../hooks/useFilter';
 
 export const SearchInput = (): JSX.Element => {
-  const timer = useRef<any>(null);
-  const homeActions = useHomeActions();
-
-  const onChange = (event: any): void => {
-    const { value } = event.target;
-    clearTimeout(timer.current);
-    timer.current = setTimeout(() => {
-      homeActions.setFilter(value);
-    }, 500);
-  };
-
+  const { onChange } = useFilter();
   return (
     <TextField
       margin="normal"
