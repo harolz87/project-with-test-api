@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../store';
@@ -22,7 +23,7 @@ export const useRegs = (): UseRegsResult => {
     }
   }, []);
 
-  const onScroll = (e: React.UIEvent<HTMLDivElement, UIEvent>): void => {
+  const onScroll = (e: any): void => {
     const bottom = e.target.scrollHeight - e.target.scrollTop === e.target.clientHeight;
     if (bottom && regs.length > 0) {
       homeActions.nextRegs();

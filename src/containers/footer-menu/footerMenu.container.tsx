@@ -41,8 +41,10 @@ export const FooterMenu = withRouter(({
   const [value, setValue] = useState(INIT_VALUE);
   useEffect((): void => {
     setValue(location.pathname);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleChange = (event: React.ChangeEvent<any>, newValue: string): void => {
     setValue(newValue);
   };

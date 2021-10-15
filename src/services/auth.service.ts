@@ -17,6 +17,7 @@ const mook = ({
   userName,
   password,
 }: SignupArgs): Promise<CurrentUser> => new Promise((resolve, reject) => {
+  // eslint-disable-next-line no-console
   console.log('init auth simulation');
   setTimeout(() => {
     if (userName === 'test@test.com' && password === '123') {

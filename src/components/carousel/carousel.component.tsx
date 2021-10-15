@@ -3,7 +3,7 @@ import { Carousel as ReCarousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 
 interface CarouselProps {
-    children: any;
+    children: JSX.Element[];
 }
 
 export const Carousel = ({

@@ -53,6 +53,8 @@ module.exports = {
       "no-param-reassign": "off",
       "react/jsx-one-expression-per-line": "off",
       "react/jsx-props-no-spreading": "off",
+      "@typescript-eslint/no-explicit-any": "off",
+      "react-hooks/exhaustive-deps": "off",
     },
     "settings": {
       "import/resolver": {

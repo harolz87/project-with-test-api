@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { store } from '../store';
 import { actions as alertErrorActions } from '../store/slices/alert-error';
 import { actions as loadActions } from '../store/slices/load';
