@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { PokemonDetail } from '../../components/pokemon-detail';
-import { useFavs } from './hooks/useFavs';
+import { useDetail } from './hooks/useDetail';
 
 export const Detail = (): JSX.Element | null => {
-  const { reg } = useFavs();
+  const { reg } = useDetail();
   if (reg === null) {
     return null;
   }

@@ -9,7 +9,7 @@ interface UseFavsResult {
     reg: any | null;
 }
 
-export const useFavs = (): UseFavsResult => {
+export const useDetail = (): UseFavsResult => {
   const reg = useSelector((state: RootState) => state.detail.reg);
   const detailActions = useDetailActions();
   const { id } = useParams<{ id: string }>();
