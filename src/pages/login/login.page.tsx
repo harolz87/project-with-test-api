@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -10,49 +8,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 
-import { RootState } from '../../store';
-
-import { useAlertErrorActions } from '../../hooks/actions/useAlertErrorActions';
-import { useAuthActions } from '../../hooks/actions/useAuthActions';
+import { useLogin } from './hooks/useLogin';
 
 export const Login = (): JSX.Element => {
-  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-  const history = useHistory();
-  const alertErrorActions = useAlertErrorActions();
-  const authActions = useAuthActions();
-  
-  useEffect(() => {
-    if (isAuthenticated) {
-      history.push('/');
-    }
-  }, [isAuthenticated]);
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const email = data.get('email');
-    const password = data.get('password');
-    const errors = [];
-    if (!email || email.toString().trim() === '') {
-      errors.push('The email field is mandatory');
-    }
-
-    if (!password || password.toString().trim() === '') {
-      errors.push('The password field is mandatory');
-    }
-
-    if (errors.length > 0) {
-      alertErrorActions.setErrors(errors);
-      return;
-    }
-
-    alertErrorActions.reset();
-
-    authActions.singup({
-      userName: email,
-      password,
-    });
-  };
+  const { handleSubmit } = useLogin();
 
   return (
     <Container component="main" maxWidth="xs">
