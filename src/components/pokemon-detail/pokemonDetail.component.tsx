@@ -5,9 +5,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 
 import { Carousel } from '../carousel';
-import { Masonry } from '../masonry';
 
 import './pokemonDetail.css';
 
@@ -24,17 +24,19 @@ const Description = ({
   title,
   children,
 }: DescriptionProps): JSX.Element => (
-  <Card className="pokemon-detail__description">
-    <CardContent>
-      <Typography className="pokemon-detail__description-title" variant="h5" component="div">
-        {title}
-      </Typography>
-      <br />
-      <Typography className="pokemon-detail__description-content" variant="body2">
-        {children}
-      </Typography>
-    </CardContent>
-  </Card>
+  <Grid item xs={2} sm={2} md={2}>
+    <Card className="pokemon-detail__description">
+      <CardContent>
+        <Typography className="pokemon-detail__description-title" variant="h5" component="div">
+          {title}
+        </Typography>
+        <br />
+        <Typography className="pokemon-detail__description-content" variant="body2">
+          {children}
+        </Typography>
+      </CardContent>
+    </Card>
+  </Grid>
 );
 
 interface CarouselItemProps {
@@ -67,7 +69,8 @@ export const PokemonDetail = ({
         </Box>
         <Box className="pokemon-detail__card-rigth">
           <CardContent className="">
-            <Masonry numColumns={2}>
+            <Grid container spacing={{ xs: 2 }} columns={{ xs: 1, sm: 1, md: 4 }}>
+
               <Description title="Name">
                 {reg.name}
               </Description>
@@ -95,7 +98,7 @@ export const PokemonDetail = ({
                 ))
             }
               </Description>
-            </Masonry>
+            </Grid>
           </CardContent>
         </Box>
 
