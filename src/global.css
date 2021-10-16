@@ -38,6 +38,11 @@ div.background-color-primary {
     background-color: var(--colorPrimary);
 }
 
+@media only screen and (max-width : 320px) {
+    h2 {
+        font-size: 20px;
+    }
+}
 
 @media (min-width: 350px) {
     h2 {
