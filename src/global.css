@@ -29,11 +29,22 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
     text-align: center;
-    font-size: 76px;
+    font-size: 35px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 div.background-color-primary {
     background-color: var(--colorPrimary);
+}
+
+
+@media (min-width: 350px) {
+    h2 {
+        text-align: center;
+        font-size: 76px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
 }
