@@ -41,7 +41,7 @@
     align-self: center;
 }
 
-@media (min-width: 1500px) {
+@media (min-width: 1250px) {
     .pokemon-detail__wrapper {
         width: 70%;
     }
