@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 
-import { Masonry } from '../../../../components/masonry';
+import { PokemonList } from '../../../../components/pokemon-list';
 import { PokemonItem } from '../../../../components/pokemon-item';
 
 import { useRegs } from '../hooks/useRegs';
@@ -23,7 +23,7 @@ export const List = (): JSX.Element => {
 
   return (
     <>
-      <Masonry onScroll={onScroll}>
+      <PokemonList onScroll={onScroll}>
         {
         regs.map(({ name, id }) => {
           const isLiked = favsHash[id] === true;
@@ -39,7 +39,7 @@ export const List = (): JSX.Element => {
           );
         })
       }
-      </Masonry>
+      </PokemonList>
       {showMore && (
       <Button
         variant="contained"

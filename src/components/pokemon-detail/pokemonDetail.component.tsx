@@ -69,7 +69,7 @@ export const PokemonDetail = ({
         </Box>
         <Box className="pokemon-detail__card-rigth">
           <CardContent className="">
-            <Grid container spacing={{ xs: 2 }} columns={{ xs: 1, sm: 1, md: 4 }}>
+            <Grid container spacing={{ xs: 1, sm: 1, md: 1 }} columns={{ xs: 1, sm: 1, md: 4 }}>
 
               <Description title="Name">
                 {reg.name}

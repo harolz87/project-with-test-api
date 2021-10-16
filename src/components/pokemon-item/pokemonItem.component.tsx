@@ -8,6 +8,7 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 
 import { ROOT_ROUTE } from '../../config/env';
 
@@ -40,7 +41,7 @@ export const PokemonItem = ({
   isLiked,
   onClickLiked,
 }: PokemonItemProps): JSX.Element => (
-  <div className="pokemon-item">
+  <Grid item xs={1} sm={1} md={2} className="pokemon-item">
     <Card sx={{ maxWidth: 345 }}>
       <LinkDetail id={id}>
         <CardHeader
@@ -74,5 +75,5 @@ export const PokemonItem = ({
         </LinkDetail>
       </CardActions>
     </Card>
-  </div>
+  </Grid>
 );

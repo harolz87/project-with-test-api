@@ -1,3 +1,9 @@
+.pokemon-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .pokemon-item a {
     color: initial;
     text-decoration: none;
