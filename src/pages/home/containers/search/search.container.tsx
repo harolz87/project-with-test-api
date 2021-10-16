@@ -11,7 +11,6 @@ export const SearchInput = (): JSX.Element => {
       id="search"
       label="local filter"
       name="search"
-      autoFocus
       onChange={onChange}
     />
   );
